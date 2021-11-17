@@ -27,4 +27,3 @@
 
 #Allow mediatranscoder to access hal_allocator
 #hal_client_domain(mediatranscoding, hal_allocator)
-
