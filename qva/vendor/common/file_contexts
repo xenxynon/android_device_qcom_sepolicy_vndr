@@ -72,6 +72,8 @@
 /dev/socket/wigig/sensingdaemon                 u:object_r:vendor_sensingdaemon_socket:s0
 /dev/socket/qcc_trd(/.*)?                       u:object_r:vendor_qccvendor_socket:s0
 /dev/socket/qesd                                u:object_r:vendor_qesd_socket:s0
+/dev/socket/qesdoem                             u:object_r:vendor_qesdoem_socket:s0
+/dev/socket/qesdsec                             u:object_r:vendor_qesdsec_socket:s0
 /dev/socket/qvrservice_vndr                     u:object_r:vendor_qvrd_vndr_socket:s0
 /dev/socket/qvrservice_vndr_camera              u:object_r:vendor_qvrd_vndr_socket:s0
 /dev/socket/sxrservice_vndr                     u:object_r:vendor_sxrd_vndr_socket:s0
@@ -87,23 +89,24 @@
 /vendor/bin/hw/android\.hardware\.keymaster@4\.1-strongbox-service-qti             u:object_r:vendor_hal_keymaster_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.keymaster@4\.1-javacard.service                  u:object_r:hal_keymaster_default_exec:s0
 /vendor/bin/init\.qti\.ese\.strongbox\.sh                                          u:object_r:vendor_init-qti-ese-strongbox-sh_exec:s0
+/vendor/bin/hw/android\.hardware\.security\.keymint-service-spu-qti                u:object_r:vendor_hal_keymint_spu_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.security\.keymint-service\.strongbox             u:object_r:vendor_hal_keymint_strongbox_exec:s0
 /vendor/bin/hw/android\.hardware\.security\.keymint-service\.strongbox-thales      u:object_r:vendor_hal_keymint_strongbox_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.weaver@1\.0-service              u:object_r:vendor_hal_weaver_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.cryptfshw@1\.0-service-qti                   u:object_r:vendor_hal_keymaster_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.authsecret@1\.0-service-qti                      u:object_r:vendor_hal_authsecret_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.drm@[0-9]+\.[0-9]+-service\.clearkey             u:object_r:vendor_hal_drm_clearkey_exec:s0
-
-/vendor/bin/hw/vendor\.nxp\.hardware\.nfc@1\.2-service                             u:object_r:hal_nfc_default_exec:s0
-/vendor/bin/hw/vendor\.nxp\.hardware\.nfc@2\.0-service                             u:object_r:hal_nfc_default_exec:s0
-/vendor/bin/hw/android\.hardware\.nfc@1\.2-service-st                              u:object_r:hal_nfc_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.nfc-service\.nxp                 u:object_r:hal_nfc_default_exec:s0
+/vendor/bin/hw/android\.hardware\.nfc-service-st                                   u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service                           u:object_r:vendor_hal_alarm_qti_default_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.alarm-service                                u:object_r:vendor_hal_alarm_qti_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.iop@2\.0-service                             u:object_r:vendor_hal_iop_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service                   u:object_r:vendor_hal_qteeconnector_qti_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.qseecom@1\.0-service                         u:object_r:vendor_hal_qseecom_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.scve\.objecttracker@1\.0-service             u:object_r:vendor_scve_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.spu@1\.[0-1]-service                   u:object_r:vendor_hal_spu_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.spu@2\.0-service                       u:object_r:vendor_hal_spu_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.spu-service                  u:object_r:vendor_hal_spu_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.scve\.panorama@1\.0-service  u:object_r:vendor_scve_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.sensorscalibrate-service                     u:object_r:vendor_hal_sensorscalibrate_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.soter@1\.0-service           u:object_r:vendor_hal_soter_qti_exec:s0
@@ -139,8 +142,6 @@
 /(vendor|system/vendor)/bin/seemp_healthd                                          u:object_r:vendor_seemp_health_daemon_exec:s0
 /(vendor|system/vendor)/bin/hw/qfp-daemon                                          u:object_r:vendor_qfp-daemon_exec:s0
 /(vendor|system/vendor)/bin/adpl                                                   u:object_r:vendor_adpl_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.0-service           u:object_r:vendor_hal_esepowermanager_qti_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.1-service           u:object_r:vendor_hal_esepowermanager_qti_exec:s0
 /(vendor|system/vendor)/bin/esepmdaemon                                            u:object_r:vendor_esepmdaemon_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper                                             u:object_r:vendor_mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/ks                                                     u:object_r:vendor_mdm_helper_exec:s0
@@ -148,6 +149,7 @@
 /(vendor|system/vendor)/bin/mmid                                                   u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.[0-1]-service     u:object_r:vendor_hal_factory_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.servicetracker@1\.[0-2]-service u:object_r:vendor_hal_srvctracker_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.servicetrackeraidl-service   u:object_r:vendor_hal_srvctracker_default_exec:s0 
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cvp@1\.0-service             u:object_r:vendor_cvp_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.secureprocessor@1\.0         u:object_r:vendor_hal_secureprocessor_qti_exec:s0
 /(vendor|system/vendor)/bin/fstman                                                 u:object_r:vendor_fstman_exec:s0
@@ -159,6 +161,8 @@
 /vendor/bin/usbsecure                                                              u:object_r:vendor_usb_qti_exec:s0
 /vendor/bin/vendor\.qti\.qspmhal@1\.0-service                                      u:object_r:vendor_hal_qspmhal_default_exec:s0
 /vendor/bin/qesdk-manager                                                          u:object_r:vendor_hal_qesdhal_default_exec:s0
+/vendor/bin/qesdk-oem-svc                                                          u:object_r:vendor_qesdoem_default_exec:s0
+/vendor/bin/qesdk-secmanager                                                       u:object_r:vendor_qesdsect_exec:s0
 /(vendor|system/vendor)/bin/qms                                                    u:object_r:vendor_qms_exec:s0
 /(vendor|system/vendor)/bin/hw/qvrservice                                          u:object_r:vendor_qvrd_vndr_exec:s0
 /(vendor|system/vendor)/bin/hw/sxrservice                                          u:object_r:vendor_sxrd_vndr_exec:s0

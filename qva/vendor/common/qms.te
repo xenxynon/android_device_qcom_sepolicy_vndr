@@ -79,6 +79,7 @@ allow vendor_qms vendor_qms:{
 }create_socket_perms_no_ioctl;
 
 allow vendor_qms self:udp_socket create_socket_perms;
+allowxperm vendor_qms self:udp_socket ioctl priv_sock_ioctls;
 hal_server_domain_bypass(vendor_qms, vendor_hal_qms_qti)
 hal_attribute_service(vendor_hal_qms_qti, vendor_hal_qms_service)
 binder_call(vendor_hal_qms_qti_server, servicemanager)
@@ -139,6 +140,12 @@ allow vendor_qms vendor_wifi_vendor_wpa_socket:sock_file write;
 unix_socket_send(vendor_qms, wpa, hal_wifi_supplicant)
 allow vendor_qms wpa_data_file:dir w_dir_perms;
 allow vendor_qms wpa_data_file:sock_file create_file_perms;
+
+allow vendor_qms firmware_file:dir r_dir_perms;
+allow vendor_qms firmware_file:file r_file_perms;
+
+# Allow vendor_qms to read vendor_soc_model_prop
+get_prop(vendor_qms, vendor_soc_model_prop);
 
 #communicating with hostapd for sending commands/listening to events
 allow vendor_qms hostapd_data_file:dir rw_dir_perms;
