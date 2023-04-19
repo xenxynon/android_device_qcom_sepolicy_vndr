@@ -48,7 +48,16 @@ android.hardware.security.keymint.IKeyMintDevice/strongbox                u:obje
 android.hardware.security.sharedsecret.ISharedSecret/strongbox            u:object_r:hal_sharedsecret_service:s0
 vendor.qti.qccvndhal_aidl.IQccvndhal/qccvndhal         u:object_r:vendor_hal_qccvndhal_service:s0
 android.hardware.security.keymint.IRemotelyProvisionedComponent/strongbox u:object_r:hal_keymint_service:s0
+vendor.qti.hardware.factory.IFactory/default                              u:object_r:vendor_hal_factory_service:s0
 vendor.qti.gnss.ILocAidlGnss/default                   u:object_r:hal_gnss_service:s0
+vendor.qti.hardware.bluetooth.xpanprovider.IXpanProvider/default          u:object_r:vendor_hal_xpanprovider_service:s0
 vendor.qti.qesdhalaidl.IQesdhal/default                u:object_r:vendor_hal_qesdhalaidl_service:s0
 vendor.qti.hardware.sensorscalibrate.ISensorsCalibrate/default           u:object_r:vendor_hal_sensorscalibrateaidl_service:s0
+vendor.qti.qspmhal.IQspmhal/default                           u:object_r:vendor_hal_qspmhal_service:s0
 android.hardware.drm.IDrmFactory/wfdhdcp               u:object_r:hal_drm_service:s0
+vendor.qti.hardware.qconfig.IQConfig/default                          u:object_r:vendor_hal_qconfig_service:s0
+vendor.qti.hardware.perf2.IPerf/default                u:object_r:vendor_hal_perf2_service:s0
+vendor.qti.hardware.vpp.IVppService/default            u:object_r:vendor_hal_vpp_service:s0
+vendor.qti.hardware.power.powermodule.IPowerModule/default     u:object_r:vendor_hal_poweroptservice_service:s0
+vendor.qti.qhcp.IQHDC/default                          u:object_r:vendor_hal_qms_service:s0
+vendor.qti.hardware.qseecom.IQSEECom/default           u:object_r:vendor_hal_qseecom_service:s0
