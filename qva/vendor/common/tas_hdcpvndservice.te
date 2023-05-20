@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2023 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,33 +24,37 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
+
 # Changes from Qualcomm Innovation Center are provided under the following license:
 # Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-#Changes from Qualcomm Innovation Center are provided under the following license:
+#Define Domain
+type vendor_tsa_hdcpservice, domain;
+type vendor_tsa_hdcpservice_exec, exec_type, vendor_file_type, file_type;
 
-#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
-#SPDX-License-Identifier: BSD-3-Clause-Clear
+init_daemon_domain(vendor_tsa_hdcpservice)
 
-/vendor/bin/Loopback_native 	                                    u:object_r:vendor_qtiloopback_native_exec:s0
-/vendor/bin/qttestservice                                           u:object_r:vendor_qttestservice_exec:s0
-/vendor/bin/init.fda.script.sh                                      u:object_r:vendor-qti-testscripts_exec:s0
-/vendor/bin/init.fda.am.sh                                          u:object_r:vendor-qti-testscripts_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.debugutils-service        u:object_r:vendor_hal_debugutils_default_exec:s0
+#Allow to use Vendor Binder IPC
+vndbinder_use(vendor_tsa_hdcpservice)
 
-#wifimyftm daemon
-/(vendor|system/vendor)/bin/wifimyftm    u:object_r:vendor_wifimyftmsvc_exec:s0
+#Allow the interaction with servicemanager
+binder_use(vendor_tsa_hdcpservice)
 
-# QESDK ONE
-/dev/socket/qesdk_one(/.*)?                     u:object_r:vendor_qesd_one_socket:s0
-/vendor/bin/qesdk-one                           u:object_r:vendor_hal_qesdonehal_default_exec:s0
-/data/vendor/qesdk_token(/.*)?                  u:object_r:vendor_qesd_one_token_data_file:s0
+add_service(vendor_tsa_hdcpservice, vendor_tsa_hdcpvndservice)
 
-# QESDK SAMPLE CLIENTS
-/vendor/bin/qsap_sampleclient                   u:object_r:vendor_qesdk_sampleclient_exec:s0
-/vendor/bin/qsap_sanity                         u:object_r:vendor_qesdk_sanity_qsap_exec:s0
+#Allow access to firmware files for HDCP session
+r_dir_file(vendor_tsa_hdcpservice, firmware_file)
 
-#QVIRTSERVICE SAMPLE CLIENT
-/vendor/bin/qvirt-testclient                    u:object_r:vendor_qvirt_testclient_exec:s0
+#Allow access to tee device for HDCP sessions
+allow vendor_tsa_hdcpservice tee_device:chr_file rw_file_perms;
+
+binder_call(vendor_tsa_hdcpservice, vendor_wfdvndservice);
+binder_call(vendor_tsa_hdcpservice, vendor_wifidisplayhalservice_qti);
+
+#Allow /dev/dma_heap file access
+allow vendor_tsa_hdcpservice vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_tsa_hdcpservice vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+allow vendor_tsa_hdcpservice vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
+allow vendor_tsa_hdcpservice vendor_vm_cp_bitstream_device:chr_file r_file_perms;
+allow vendor_tsa_hdcpservice vendor_membuf_dev:chr_file r_file_perms;

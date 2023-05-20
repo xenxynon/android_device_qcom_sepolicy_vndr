@@ -133,6 +133,7 @@
 /dev/socket/port-bridge(/.*)?                   u:object_r:vendor_port-bridge_socket:s0
 /dev/socket/tlpd(/.*)?                          u:object_r:vendor_tlpd_socket:s0
 /dev/socket/qnicornd(/.*)?                      u:object_r:vendor_qnicornd_socket:s0
+/dev/socket/nicmd(/.*)?                         u:object_r:vendor_nicmd_socket:s0
 /dev/socket/qti_dpm_uds_file                    u:object_r:vendor_dataqti_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:vendor_location_socket:s0
 /dev/socket/qsap_location(/.*)?                 u:object_r:vendor_qsap_location_socket:s0
@@ -182,6 +183,8 @@
 /dev/dma_heap/qcom,audio-ml             u:object_r:vendor_dmabuf_audio_ml_heap_device:s0
 /dev/dma_heap/qcom,demura               u:object_r:vendor_dmabuf_demura_heap_device:s0
 /dev/dma_heap/qcom,ubwcp                u:object_r:vendor_dmabuf_ubwcp_heap_device:s0
+/dev/dma_heap/qcom,system-movable       u:object_r:vendor_dmabuf_system_movable_heap_device:s0
+/dev/dma_heap/qcom,ubwcp-movable        u:object_r:vendor_dmabuf_ubwcp_movable_heap_device:s0
 
 # mem-buf device used for inter-VM memory transactions
 /dev/membuf                                     u:object_r:vendor_membuf_dev:s0
@@ -216,6 +219,7 @@
 /vendor/bin/thermal-engine      u:object_r:vendor_thermal-engine_exec:s0
 /vendor/bin/hw/android.hardware.thermal@2.0-service.qti-v2      u:object_r:hal_thermal_default_exec:s0
 /vendor/bin/thermal-engine-v2      u:object_r:vendor_thermal-engine_exec:s0
+/vendor/bin/hw/android.hardware.thermal-service.qti      u:object_r:hal_thermal_default_exec:s0
 /vendor/bin/hw/vendor.qti.hardware.limits@1.1-service    u:object_r:vendor_limits-hal_exec:s0
 /vendor/bin/hw/vendor.qti.hardware.limits@1.2-service    u:object_r:vendor_limits-hal_exec:s0
 /vendor/bin/sensors.qti         u:object_r:vendor_sensors_qti_exec:s0
@@ -245,6 +249,7 @@
 /vendor/bin/tlpd                u:object_r:vendor_tlpd_exec:s0
 /vendor/bin/dlsc                u:object_r:vendor_dlsc_exec:s0
 /vendor/bin/qnicornd            u:object_r:vendor_qnicornd_exec:s0
+/vendor/bin/nicmd               u:object_r:vendor_nicmd_exec:s0
 /vendor/bin/qti                 u:object_r:vendor_qti_exec:s0
 /vendor/bin/qsap_voiceui        u:object_r:vendor_vui_dmgr_exec:s0
 ## Context for location features - start
@@ -280,6 +285,7 @@
 /vendor/bin/hw/android\.hardware\.security\.keymint-service-qti		     u:object_r:vendor_hal_keymint_qti_exec:s0
 /vendor/bin/init\.qti\.keymaster\.sh                                 u:object_r:vendor_init-qti-keymaster-sh_exec:s0
 /vendor/bin/hw/android\.hardware\.gatekeeper-service-qti       u:object_r:vendor_hal_gatekeeper_qti_exec:s0
+/vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software  u:object_r:hal_gatekeeper_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss.*-service-qti u:object_r:vendor_hal_gnss_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti         u:object_r:hal_bluetooth_default_exec:s0
 /vendor/bin/hw/android\.hardware\.bluetooth@1\.1-service-qti         u:object_r:hal_bluetooth_default_exec:s0
@@ -294,6 +300,7 @@
 /(vendor|system/vendor)/bin/init\.qti\.display_boot\.sh  u:object_r:qti_display_boot_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qdutils_disp@1\.0-service-qti u:object_r:vendor_hal_qdutils_disp_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.trustedui@1\.0-service-qti u:object_r:vendor_hal_trustedui_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.trustedui-aidl-service-qti u:object_r:vendor_hal_trustedui_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.capabilityconfigstore@1\.0-service u:object_r:vendor_hal_capabilityconfigstore_qti_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.camera\.provider@2\.[0-9]+-service u:object_r:hal_camera_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.camera\.provider@2\.[0-9]+-service_64 u:object_r:hal_camera_default_exec:s0
@@ -417,6 +424,7 @@
 /data/vendor/netmgr(/.*)?              u:object_r:vendor_netmgr_data_file:s0
 /data/vendor/netmgr/recovery(/.*)?     u:object_r:vendor_netmgr_recovery_data_file:s0
 /data/vendor/qnicornd(/.*)?            u:object_r:vendor_qnicorn_data_file:s0
+/data/vendor/nicmd(/.*)?               u:object_r:vendor_nicm_data_file:s0
 /data/vendor/qmipriod(/.*)?            u:object_r:vendor_qmipriod_data_file:s0
 /data/vendor/shsusr(/.*)?              u:object_r:vendor_shsusr_data_file:s0
 /data/vendor/location(/.*)?            u:object_r:vendor_location_data_file:s0
