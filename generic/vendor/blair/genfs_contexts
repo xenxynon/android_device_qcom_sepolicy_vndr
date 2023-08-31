@@ -165,6 +165,7 @@ genfscon sysfs /devices/platform/soc/1628000.qcom,msm-eud/wakeup u:object_r:sysf
 # Remoteproc wakeup node
 genfscon sysfs /devices/platform/soc/a400000.remoteproc-adsp/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/b000000.remoteproc-cdsp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/6000000.remoteproc-mss/wakeup u:object_r:sysfs_wakeup:s0
 
 # Feature configs for Mannar
 genfscon sysfs /devices/platform/soc/soc:qfprom@0/feat_conf8 u:object_r:vendor_sysfs_qfprom:s0
