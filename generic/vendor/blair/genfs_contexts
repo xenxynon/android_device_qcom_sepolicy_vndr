@@ -163,6 +163,14 @@ genfscon sysfs /devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:3/scs
 genfscon sysfs /devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:4/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
 genfscon sysfs /devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:5/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
 
+# Eud wakeup node
+genfscon sysfs /devices/platform/soc/1628000.qcom,msm-eud/wakeup u:object_r:sysfs_wakeup:s0
+
+# Remoteproc wakeup node
+genfscon sysfs /devices/platform/soc/a400000.remoteproc-adsp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/b000000.remoteproc-cdsp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/6000000.remoteproc-mss/wakeup u:object_r:sysfs_wakeup:s0
+
 # Feature configs for Mannar
 genfscon sysfs /devices/platform/soc/soc:qfprom@0/feat_conf8 u:object_r:vendor_sysfs_qfprom:s0
 genfscon sysfs /devices/platform/soc/a400000.remoteproc-adsp/remoteproc/remoteproc0/a400000.remoteproc-adsp:glink-edge/a400000.remoteproc-adsp:glink-edge.adsp_apps.-1.-1/wakeup u:object_r:sysfs_wakeup:s0
