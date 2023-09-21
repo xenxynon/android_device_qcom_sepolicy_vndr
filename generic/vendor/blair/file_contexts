@@ -66,10 +66,12 @@
 /dev/block/platform/soc/4804000.ufshc/by-name/apdp_[ab]             u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/bluetooth_[ab]        u:object_r:vendor_modem_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/boot_[ab]             u:object_r:boot_block_device:s0
+/dev/block/platform/soc/4804000.ufshc/by-name/init_boot_[ab]        u:object_r:boot_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/vendor_boot_[ab]      u:object_r:boot_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/cmnlib_[ab]           u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/cmnlib64_[ab]         u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/core_nhlos_[ab]       u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4804000.ufshc/by-name/pvmfw_[ab]            u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/devcfg_[ab]           u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/dsp_[ab]              u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/dtbo_[ab]             u:object_r:vendor_custom_ab_block_device:s0
@@ -115,9 +117,11 @@
 /dev/block/platform/soc/4744000.sdhci/by-name/abl_[ab]          u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/apdp_[ab]         u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/boot_[ab]         u:object_r:boot_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/init_boot_[ab]    u:object_r:boot_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/vendor_boot_[ab]  u:object_r:boot_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/cmnlib_[ab]       u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/cmnlib64_[ab]     u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/pvmfw_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/devcfg_[ab]       u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/hyp_[ab]          u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/multiimgoem_[ab]  u:object_r:vendor_custom_ab_block_device:s0
@@ -251,3 +255,11 @@
 
 #poweropt-service
 /(vendor|system/vendor)/bin/poweropt-service u:object_r:vendor_poweroptservice_exec:s0
+
+# ufs device type
+/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:1/block/sdb/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:2/block/sdc/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:3/block/sdd/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:4/block/sde/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:5/block/sdf/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
