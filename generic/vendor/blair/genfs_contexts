@@ -140,6 +140,7 @@ genfscon sysfs /devices/platform/soc/soc:gpio_keys/wakeup u:object_r:sysfs_wakeu
 genfscon sysfs /devices/platform/soc/4e00000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
 
 genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a80000.i2c/i2c-0/0-0028/wakeup u:object_r:sysfs_wakeup:s0
 
 # DCVS nodes
 genfscon sysfs /devices/platform/soc/fd90100.qcom,cpu0-cpu-l3-lat/devfreq u:object_r:vendor_sysfs_devfreq:s0
