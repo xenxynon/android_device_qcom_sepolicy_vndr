@@ -220,20 +220,11 @@
 /sys/devices/platform/soc/aab0000.qcom,venus/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/aab0000.qcom,venus/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
 
-/sys/devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/6080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/6080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
-/sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/32300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/32300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/2400000.remoteproc-slpi/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/2400000.remoteproc-slpi/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/a400000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/a400000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
 /sys/devices/platform/soc/soc:qcom,trustedvm@d0800000/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,trustedvm@d0800000/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
@@ -241,8 +232,8 @@
 /sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
 
-/sys/devices/platform/soc/9bb00000.remoteproc-wpss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/9bb00000.remoteproc-wpss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/5600000.remoteproc-wpss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/5600000.remoteproc-wpss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
 #Display nodes
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DP-1/enabled u:object_r:vendor_sysfs_graphics:s0
