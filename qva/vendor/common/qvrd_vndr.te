@@ -200,7 +200,3 @@ allow vendor_qvrd_vndr sysfs_net:file r_file_perms;
 
 #Allow audio hal permission
 hal_client_domain(vendor_qvrd_vndr, hal_audio);
-
-# Allow to access qvrcam hal service and socket
-allow vendor_qvrd_vndr vendor_qvrd_vndr_camera_socket:sock_file rw_file_perms;
-allow vendor_qvrd_vndr vendor_hal_qvrd_camservice:service_manager { add find };
