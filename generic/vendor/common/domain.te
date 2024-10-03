@@ -83,6 +83,7 @@ neverallow { domain
 - vendor_chre
 - vendor_dspservice
 - vendor_vppservice
+- vendor_qvrd_vndr
 - vendor_hexlpservice
 - vendor_qvrd_vndr
 - hal_contexthub_default
@@ -106,13 +107,15 @@ neverallow { domain
 - vendor_adsprpcd
 - vendor_cdsprpcd
 - vendor_audioadsprpcd
+- vendor_cvp
 - hal_camera_default
 - vendor_qvrd_vndr
+- vendor_scve
 - vendor_thermal-engine
 - vendor_dspservice
 userdebug_or_eng(` -vendor_sysmonapp_app_test')
 } vendor_qdsp_device:chr_file *;
-neverallow { domain -init -vendor_init - ueventd } vendor_qdsp_device:chr_file ~{r_file_perms};
+neverallow { domain -init -vendor_init -vendor_cvp -vendor_scve - ueventd } vendor_qdsp_device:chr_file ~{r_file_perms};
 neverallow { appdomain - shell userdebug_or_eng(`-vendor_sysmonapp_app_test') } vendor_qdsp_device:chr_file ~{ioctl read};
 neverallow mediacodec vendor_qdsp_device:chr_file ~{ioctl read};
 neverallow { domain
