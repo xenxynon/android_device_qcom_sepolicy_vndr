@@ -113,9 +113,10 @@ neverallow { domain
 - vendor_scve
 - vendor_thermal-engine
 - vendor_dspservice
+- vendor_biometricsface
 userdebug_or_eng(` -vendor_sysmonapp_app_test')
 } vendor_qdsp_device:chr_file *;
-neverallow { domain -init -vendor_init -vendor_cvp -vendor_scve - ueventd } vendor_qdsp_device:chr_file ~{r_file_perms};
+neverallow { domain -vendor_biometricsface -init -vendor_init -vendor_cvp -vendor_scve - ueventd } vendor_qdsp_device:chr_file ~{r_file_perms};
 neverallow { appdomain - shell userdebug_or_eng(`-vendor_sysmonapp_app_test') } vendor_qdsp_device:chr_file ~{ioctl read};
 neverallow mediacodec vendor_qdsp_device:chr_file ~{ioctl read};
 neverallow { domain
@@ -137,6 +138,7 @@ neverallow { domain
 - apexd
 - vendor_qti_init_shell
 - wpa_supplicant_macsec
+- vendor_biometricsface
 userdebug_or_eng(` -vendor_subsystem_ramdump')
 } { vendor_sys_nonsp_comp vendor_sys_sp_comp }: file *;
 
